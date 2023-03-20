@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_app/pages/perfil_page.dart';
 //import http package manually
 
 class Home extends StatefulWidget {
@@ -72,7 +73,7 @@ child: Icon(Icons.person, size:100,),
                 contentPadding: EdgeInsets.only(left: 17, top: 30),
                 autofocus: true,
                 leading: Icon(Icons.search),
-                title: const Text('Item 1'),
+                title: const Text('Pesquisar'),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -81,7 +82,11 @@ child: Icon(Icons.person, size:100,),
                 leading: Icon(Icons.person),
                 title: const Text('Conta'),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder:(context)=> ProfilePage(),
+                      ),
+                  );
                 },
               )
             ],
